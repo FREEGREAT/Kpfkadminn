@@ -9,7 +9,8 @@ import {
   getDocs, 
   doc,
   query  } from '@firebase/firestore';
-import ListGroups from './ListGroups';
+import ListGroups from './components/ListGroups';
+import AddSubjects from './components/AddSubjects';
 
 
 async function queryDoc(){
@@ -57,6 +58,7 @@ function App() {
         </header>
          < Navbar show={showSidebar} />
         <ListGroups />
+        <AddSubjects />
       </div>
       
   )
