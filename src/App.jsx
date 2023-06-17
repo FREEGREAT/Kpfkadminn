@@ -39,6 +39,7 @@ async function queryDoc(){
 
 
 
+
 function App() {
   //const group = collection(db, `/kpfk`)
   /*onSnapshot(group, onSnapshot => {
