@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { addDoc, collection } from 'firebase/firestore'
+import { collection } from 'firebase/firestore'
 import { db } from '../config/firebase'
+import { updateDoc } from 'firebase/firestore'
+import { subjectCollectionRef } from '../lib/firestore.collection'
 
 export default function AddSubjects() {
 
@@ -11,8 +13,13 @@ export default function AddSubjects() {
         if (name === ''){
             return
         }
+        // db.collection("kpfk").doc('lessons').collection('monday').doc('p41').update({
+        //     day : "tuesday"
+            
+        // });
         const subjectCollectionRef = collection(db, '/kpfk/lessons/monday/')
-        addDoc(subjectCollectionRef, {name}).then(response => {
+        // const subjectCollectionRef = collection(db, 'kpfk').doc('lessons').collection('monday').doc('p41').set({name : this.name})
+        updateDoc(subjectCollectionRef, {name}).then(response => {
             console.log(response.id)
         }).catch(error =>{
             console.log(error.message)
