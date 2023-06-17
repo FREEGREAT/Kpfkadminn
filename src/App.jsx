@@ -11,9 +11,19 @@ import {
   query  } from '@firebase/firestore';
 import ListGroups from './components/ListGroups';
 import AddSubjects from './components/AddSubjects';
-import EditSubjects from './components/EditSubjects';
 
 
+async function queryDoc(){
+  const querr = query(
+    collection(db, '/kpfk')
+  );
+
+  const querySnapshot = await getDocs(querr);
+  const allDocs = querySnapshot.forEach((snap) => {
+    console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+  });
+
+}
 
 /*async function queryDoc() {
   const collectionPath = 'groups';
@@ -22,7 +32,7 @@ import EditSubjects from './components/EditSubjects';
   const querySnapshot = await getDocs(collectionRef);
   var aa
   querySnapshot.forEach((doc) => {
-    (Document ${doc.id} contains ${JSON.stringify(doc.data())});
+    (`Document ${doc.id} contains ${JSON.stringify(doc.data())}`);
   });
 
 }*/
@@ -31,6 +41,13 @@ import EditSubjects from './components/EditSubjects';
 
 
 function App() {
+  //const group = collection(db, `/kpfk`)
+  /*onSnapshot(group, onSnapshot => {
+    if(onSnapshot.exists()){
+      const docData = onSnapshot.data();
+      console.log(`Zalupa  is ${JSON.stringify(docData)}`);
+    }
+  });*/
 
  
 
@@ -43,7 +60,6 @@ function App() {
          < Navbar show={showSidebar} />
         <ListGroups />
         <AddSubjects />
-        <EditSubjects />
       </div>
       
   )

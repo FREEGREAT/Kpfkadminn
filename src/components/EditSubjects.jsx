@@ -7,7 +7,7 @@ export default function EditSubjects() {
     const [days, setDays] = useState('')
     const [id, setId] = useState('')
 
-    function handleSubmit(e){      
+    function handleSubmit(e){
         e.preventDefault()
         if(days === '' || id === ''){
             return
@@ -17,16 +17,6 @@ export default function EditSubjects() {
             console.log(response)
         })
         .catch(error => console.log(error.message))
-
-        function getWeek() {
-            const groupsColletionRef = collection(db, '/kpfk');
-            getDocs(groupsColletionRef)
-            .then(response => {
-              const w = response.docs.map(doc => ({data : doc.data(), id : doc.id, }))
-              setWeek(w)
-            })
-            .catch(error => console.log(error.message))
-        }
     }
 
   return (
