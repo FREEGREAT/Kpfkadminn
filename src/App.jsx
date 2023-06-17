@@ -14,6 +14,20 @@ import AddSubjects from './components/AddSubjects';
 import EditSubjects from './components/EditSubjects';
 
 
+<<<<<<< HEAD
+=======
+async function queryDoc(){
+  const querr = query(
+    collection(db, '/kpfk')
+  );
+
+  const querySnapshot = await getDocs(querr);
+  const allDocs = querySnapshot.forEach((snap) => {
+    console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+  });
+
+}
+>>>>>>> ed99141f9265836d736ac483c3813439650128fb
 
 /*async function queryDoc() {
   const collectionPath = 'groups';
@@ -30,7 +44,11 @@ import EditSubjects from './components/EditSubjects';
 
 
 function App() {
+<<<<<<< HEAD
   const group = collection(db, Groups)
+=======
+  //const group = collection(db, `/kpfk`)
+>>>>>>> ed99141f9265836d736ac483c3813439650128fb
   /*onSnapshot(group, onSnapshot => {
     if(onSnapshot.exists()){
       const docData = onSnapshot.data();
@@ -40,7 +58,7 @@ function App() {
 
  
 
-  const [showSidebar, setShowBar] = useState(false)
+  const [showSidebar, setShowBar] = useState(true)
   return (
       <div className='App'>
         <header>
