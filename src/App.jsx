@@ -14,17 +14,6 @@ import AddSubjects from './components/AddSubjects';
 import EditSubjects from './components/EditSubjects';
 
 
-async function queryDoc(){
-  const querr = query(
-    collection(db, '/groups/P-41/Friday')
-  );
-
-  const querySnapshot = await getDocs(querr);
-  const allDocs = querySnapshot.forEach((snap) => {
-    console.log(Document ${snap.id} contains ${JSON.stringify(snap.data())});
-  });
-
-}
 
 /*async function queryDoc() {
   const collectionPath = 'groups';
