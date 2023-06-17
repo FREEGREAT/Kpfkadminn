@@ -15,7 +15,7 @@ import AddSubjects from './components/AddSubjects';
 
 async function queryDoc(){
   const querr = query(
-    collection(db, '/groups/P-41/Friday')
+    collection(db, '/kpfk')
   );
 
   const querySnapshot = await getDocs(querr);
@@ -40,7 +40,7 @@ async function queryDoc(){
 
 
 function App() {
-  const group = collection(db, `Groups`)
+  //const group = collection(db, `/kpfk`)
   /*onSnapshot(group, onSnapshot => {
     if(onSnapshot.exists()){
       const docData = onSnapshot.data();
@@ -50,7 +50,7 @@ function App() {
 
  
 
-  const [showSidebar, setShowBar] = useState(false)
+  const [showSidebar, setShowBar] = useState(true)
   return (
       <div className='App'>
         <header>
