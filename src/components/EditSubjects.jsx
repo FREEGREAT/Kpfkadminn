@@ -15,18 +15,11 @@ export default function EditSubjects() {
 
     function handleSubmit(e){
         e.preventDefault()
-        if(days === '' || id === ''
-        // || subj1 === ''
-        // || subj2 === ''
-        // || subj3 === ''
-        // || subj4 === ''
-        // || subj5 === ''
-        // || subj6 === ''
-        ){
+        if(days === '' || id === ''){
             return
         }
         const docRef = doc(db, '/kpfk/lessons/subjects', id, '/weeks/', days)
-        updateDoc(docRef,{ subj1 }).then(response => {
+        updateDoc(docRef,{ subj1, subj2, subj3, subj4, subj5, subj6 }).then(response => {
             console.log(response)
         })
         .catch(error => console.log(error.message))
@@ -45,29 +38,35 @@ export default function EditSubjects() {
             <input id='days' type="text" value={days} onChange={ e => setDays(e.target.value) }/>
             <br/>
             {/* Number 1 */}
-            <label htmlFor="subj1">Subject Name</label>
+            <label htmlFor="subj1">1 - </label>
             <input id='subj1' type="text" value={subj1} onChange={ e => setSubj1(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             {/* Number 2 */}
-            <label htmlFor="subj2">Subject Name</label>
+            <label htmlFor="subj2">2 - </label>
             <input id='subj2' type="text" value={subj2} onChange={ e => setSubj2(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             {/* Number 3 */}
-            <label htmlFor="subj3">Subject Name</label>
+            <label htmlFor="subj3">3 - </label>
             <input id='subj3' type="text" value={subj3} onChange={ e => setSubj3(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             {/* Number 4 */}
-            <label htmlFor="subj4">Subject Name</label>
+            <label htmlFor="subj4">4 - </label>
             <input id='subj4' type="text" value={subj4} onChange={ e => setSubj4(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             {/* Number 5 */}
-            <label htmlFor="subj5">Subject Name</label>
+            <label htmlFor="subj5">5 - </label>
             <input id='subj5' type="text" value={subj5} onChange={ e => setSubj5(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             {/* Number 6 */}
-            <label htmlFor="subj6">Subject Name</label>
+            <label htmlFor="subj6">6 - </label>
             <input id='subj6' type="text" value={subj6} onChange={ e => setSubj6(e.target.value) }/>
-            <button type='submit'>Update subject</button>
+            <button type='submit'>Update</button>
+            <br/>
             
         </form>
     </div>  

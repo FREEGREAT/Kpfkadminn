@@ -2,53 +2,81 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
 
-
 export default function ListGroups() {
-
-    const itemList = [
-      { id: 1, list: "Monday" },
-      { id: 2, list: "Tuesday" },
-      { id: 3, list: "Wednesday" },
-      { id: 4, list: "Thursday" },
-      { id: 5, list: "Friday" }
-    ];
-  
-  const[groups, setGroups] = useState([])
+  const [id, setId] = useState("");
+  const [message, setMessage] = useState("");
+  const [groups, setGroups] = useState([]);
 
   useEffect(() => {
-    getGroups()
-  }, [])
+    console.log(groups);
+  }, [groups]);
 
-  useEffect(() => {
-    console.log(groups)
-  }, [groups])
+  const handleSubmit = event => {
+    console.log("handleSubmit run");
+    event.preventDefault();
 
+    if (id === "") {
+      return;
+    }
 
-  
-  function getGroups() {
-    const groupsColletionRef = collection(db, '/kpfk/lessons/subjects/');
-    getDocs(groupsColletionRef)
-    .then(response => {
-      const gr = response.docs.map(doc => ({data : doc.data(), id : doc.id, }))
-      setGroups(gr)
-    })
-    .catch(error => console.log(error.message))
-  }
+    const groupsCollectionRef = collection(
+      db,
+      "/kpfk/lessons/subjects/",
+      id,
+      "/weeks"
+    );
+    getDocs(groupsCollectionRef)
+      .then(response => {
+        const gr = response.docs.map(doc => ({ data: doc.data(), id: doc.id }));
+        setGroups(gr);
+      })
+      .catch(error => console.log(error.message));
+  };
 
-  
+  const sortedDaysOfWeek = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
+
+  // Sort the groups by the index of the day of the week in the sortedDaysOfWeek array
+  const sortedGroups = [...groups].sort((a, b) =>
+    sortedDaysOfWeek.indexOf(a.id) - sortedDaysOfWeek.indexOf(b.id)
+  );
 
   return (
     <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          id="first_name"
+          name="first_name"
+          type="text"
+          placeholder="First Name"
+          onChange={event => setId(event.target.value)}
+          value={id}
+        />
+        <button type="submit">Submit form</button>
+        <h2>{message}</h2>
+      </form>
+
       <ul>
-      {itemList.map(item => (
-        <><li key={item.id}><br></br>&emsp;&emsp; <b>{item.list}</b></li><ul><br></br>
-          {groups.map(groups => <li key={groups.id}><b>&emsp;&emsp;&emsp;&emsp; {groups.id}</b><br></br>
-            1 - {groups.data[item.list][0]}<br></br>2 - {groups.data[item.list][1]}<br></br>3 - {groups.data[item.list][2]}<br></br>
-            4 - {groups.data[item.list][3]}<br></br>5 - {groups.data[item.list][4]}<br></br>6 - {groups.data[item.list][5]}<br></br>
-          </li>)}
-        </ul></>
-      ))}
-    </ul>
+        {sortedGroups.map(group => (
+          <li key={group.id}>
+            <b>&emsp;&emsp;&emsp;&emsp; {group.id}</b>
+            <br />
+            1 - {group.data.subj1}<br />
+            2 - {group.data.subj2}<br />
+            3 - {group.data.subj3}<br />
+            4 - {group.data.subj4}<br />
+            5 - {group.data.subj5}<br />
+            6 - {group.data.subj6}<br />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
