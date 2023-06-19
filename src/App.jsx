@@ -41,7 +41,6 @@ async function queryDoc(){
 
 
 function App() {
-<<<<<<< HEAD
   //const group = collection(db, `/kpfk`)
   /*onSnapshot(group, onSnapshot => {
     if(onSnapshot.exists()){
@@ -52,8 +51,6 @@ function App() {
 
  
 
-=======
->>>>>>> 3f2b201df6ded60a0bf01ce6a71cf4cc5dbf1513
   const [showSidebar, setShowBar] = useState(true)
   return (
       <div className='App'>
@@ -63,10 +60,6 @@ function App() {
          < Navbar show={showSidebar} />
         {/* <ListGroups /> */}
         <AddSubjects />
-<<<<<<< HEAD
-=======
-        <EditSubjects/>
->>>>>>> 3f2b201df6ded60a0bf01ce6a71cf4cc5dbf1513
       </div>
       
   )
