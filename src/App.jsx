@@ -10,7 +10,7 @@ import {
   doc,
   query  } from '@firebase/firestore';
 import ListGroups from './components/ListGroups';
-import AddSubjects from './components/AddSubjects';
+import EditSubjects from './components/EditSubjects';
 
 
 async function queryDoc(){
@@ -25,31 +25,11 @@ async function queryDoc(){
 
 }
 
-/*async function queryDoc() {
-  const collectionPath = 'groups';
-  const segments = collectionPath.split('/');
-  const collectionRef = collection(db, ...segments);
-  const querySnapshot = await getDocs(collectionRef);
-  var aa
-  querySnapshot.forEach((doc) => {
-    (`Document ${doc.id} contains ${JSON.stringify(doc.data())}`);
-  });
-
-}*/
 
 
 
 
 function App() {
-  //const group = collection(db, `/kpfk`)
-  /*onSnapshot(group, onSnapshot => {
-    if(onSnapshot.exists()){
-      const docData = onSnapshot.data();
-      console.log(`Zalupa  is ${JSON.stringify(docData)}`);
-    }
-  });*/
-
- 
 
   const [showSidebar, setShowBar] = useState(true)
   return (
@@ -58,8 +38,8 @@ function App() {
           <GiHamburgerMenu onClick={() => setShowBar(!showSidebar)} />
         </header>
          < Navbar show={showSidebar} />
-        {/* <ListGroups /> */}
-        <AddSubjects />
+        <ListGroups />
+        <EditSubjects />
       </div>
       
   )
