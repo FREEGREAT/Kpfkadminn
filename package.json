@@ -16,15 +16,25 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@react-icons/all-files": "^4.1.0",
+    "bootstrap": "^5.3.0",
     "firebase": "^9.22.2",
     "firestore": "^1.1.6",
+<<<<<<< HEAD
     "framer-motion": "^10.12.16",
+=======
+    "material-symbols": "^0.8.0",
+>>>>>>> 2c4b7ba14f3a9ece42bff2c05e6e8ba75612c44e
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
+<<<<<<< HEAD
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router": "^6.13.0",
     "react-router-dom": "^6.13.0"
+=======
+    "react-select": "^5.7.3"
+>>>>>>> 2c4b7ba14f3a9ece42bff2c05e6e8ba75612c44e
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
