@@ -12,18 +12,27 @@ header{
 
 header svg{
   color: white;
-  font-size: 40px;
+  font-size: 30px;
 }
 
+
+/*  sidebar */
 .sidebar{
-  width: 250px;
+  width: 270px;
   background:#553492 ;
   position: absolute;
-  height: 95vh;
+  height: 100%;
+  position: -webkit-sticky;
   left: 0px;
-  padding: 0 20px;
+  backdrop-filter: blur(1000px);
   transition: all 1s;
+  
+  opacity: 0.95;
 
+}
+
+.sidebar div{
+  opacity: 0.33;
 }
 
 .sidebar.active{
@@ -50,17 +59,38 @@ a {
   padding: 5px 20px;
   display: block;
 }
-
+ul li a{
+  transition: all 500ms;
+}
  ul li a:hover,
  ul li a.active {
   background: #47316e;
   padding: 5px;
   transition: all 500ms;
 }
-/*
-.sidebar ul li a.active {
-  color: #000;
+
+/*  sidebar */
+
+/* List group */
+.list {
+
+  margin-left: 20px;
 }
-.sidebar  {
-  font-weight: bold;
-}*/
+
+.list.litable{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.list thead th{
+
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+/* List group */

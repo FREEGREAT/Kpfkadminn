@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
+import '../App.css'
+import {Table} from '@mui/material'
 
 export default function ListGroups() {
-  const [id, setId] = useState("");
+  const [id, setId] = useState("p41");
   const [message, setMessage] = useState("");
   const [groups, setGroups] = useState([]);
 
@@ -49,7 +51,7 @@ export default function ListGroups() {
   );
 
   return (
-    <div>
+    <div className="list" >
       <form onSubmit={handleSubmit}>
         <input
           id="first_name"
@@ -62,21 +64,32 @@ export default function ListGroups() {
         <button type="submit">Submit form</button>
         <h2>{message}</h2>
       </form>
-
-      <ul>
-        {sortedGroups.map(group => (
-          <li key={group.id}>
-            <b>&emsp;&emsp;&emsp;&emsp; {group.id}</b>
-            <br />
-            1 - {group.data.subj1}<br />
-            2 - {group.data.subj2}<br />
-            3 - {group.data.subj3}<br />
-            4 - {group.data.subj4}<br />
-            5 - {group.data.subj5}<br />
-            6 - {group.data.subj6}<br />
-          </li>
-        ))}
-      </ul>
+      <table>
+  <thead>
+    <tr>
+      <th>День</th>
+      <th>1 Пара</th>
+      <th>2 Пара</th>
+      <th>3 Пара</th>
+      <th>4 Пара</th>
+      <th>5 Пара</th>
+      <th>6 Пара</th>
+    </tr>
+  </thead>
+  <tbody>
+    {sortedGroups.map(group => (
+      <tr key={group.id}>
+        <td><b>{group.id}</b></td>
+        <td>{group.data.subj1}</td>
+        <td>{group.data.subj2}</td>
+        <td>{group.data.subj3}</td>
+        <td>{group.data.subj4}</td>
+        <td>{group.data.subj5}</td>
+        <td>{group.data.subj6}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
     </div>
   );
 }
