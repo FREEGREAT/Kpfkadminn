@@ -31,12 +31,29 @@ export default function EditSubjects() {
         <form onSubmit={handleSubmit}>
 
             <label htmlFor="id">Name Group</label>
-            <input id='id' type="text" value={id} onChange={ e => setId(e.target.value) }/>
+            {/* <input id='id' type="text" value={id} onChange={ e => setId(e.target.value) }/>
+            <br/> */}
+            <select name="Групи" placeholder='Групи' id="id" value={id} onChange={e => setId(e.target.value)}>
+                <option value="p41">P-41</option>
+                <option value="p42">P-42</option>
+                <option value="p31">P-31</option>
+                <option value="p32">P-32</option>
+                <option value="p21">P-21</option>
+            </select>
             <br/>
 
-            <label htmlFor="days">Name Day</label>
+            {/* <label htmlFor="days">Name Day</label>
             <input id='days' type="text" value={days} onChange={ e => setDays(e.target.value) }/>
+            <br/> */}
+            <select name="Групи" placeholder='День' id="days" value={days} onChange={e => setDays(e.target.value)}>
+                <option value="Monday">Понеділок</option>
+                <option value="Tuesday">Вівторок</option>
+                <option value="Wednesday">Середа</option>
+                <option value="Thursday">Четвер</option>
+                <option value="Friday">П'ятниця</option>
+            </select>
             <br/>
+
             {/* Number 1 */}
             <label htmlFor="subj1">1 - </label>
             <input id='subj1' type="text" value={subj1} onChange={ e => setSubj1(e.target.value) }/>

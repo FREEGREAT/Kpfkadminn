@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
+import Dropdown from "./Dropdown";
 
 export default function ListGroups() {
   const [id, setId] = useState("");
@@ -48,17 +49,27 @@ export default function ListGroups() {
     sortedDaysOfWeek.indexOf(a.id) - sortedDaysOfWeek.indexOf(b.id)
   );
 
+
   return (
     <div>
+      
       <form onSubmit={handleSubmit}>
-        <input
+
+          <select name="Групи" id="name" value={id} onChange={event => setId(event.target.value)}>
+            <option value="p41">P-41</option>
+            <option value="p42">P-42</option>
+            <option value="p31">P-31</option>
+            <option value="p32">P-32</option>
+            <option value="p21">P-21</option>
+          </select>
+        {/* <input
           id="first_name"
           name="first_name"
           type="text"
           placeholder="First Name"
           onChange={event => setId(event.target.value)}
           value={id}
-        />
+        /> */}
         <button type="submit">Submit form</button>
         <h2>{message}</h2>
       </form>
