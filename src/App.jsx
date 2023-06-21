@@ -6,6 +6,7 @@ import ListGroups from './components/ListGroups';
 import EditSubjects from './components/EditSubjects';
 import Modal from './components/Modal'
 import {  Routes, Route } from 'react-router-dom';
+import  Login  from './components/Login';
 
 
 
@@ -22,7 +23,8 @@ function App() {
         <button type="button" onClick={()=> setOpenModal(true)}>Змінити розклад</button>
          < Navbar show={showSidebar} />
             <Routes>
-              <Route path="/" element={<ListGroups/>} />
+              <Route path="/" element={ <Login/>} />
+              <Route path="/home" element={<ListGroups/>} />
               <Route path="/Edit" element={<EditSubjects/>} />
             </Routes> 
         
