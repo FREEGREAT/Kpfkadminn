@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+
+
 body{
   margin: 0px;
+	height: 100%;
 }
 header{
   margin: 0px;
@@ -21,19 +32,16 @@ header svg{
   width: 270px;
   background:#553492 ;
   position: absolute;
-  height: 100%;
+  height: 90.5%;
   position: -webkit-sticky;
   left: 0px;
   backdrop-filter: blur(1000px);
   transition: all 1s;
   
-  opacity: 0.95;
+  opacity: 0.9;
 
 }
 
-.sidebar div{
-  opacity: 0.33;
-}
 
 .sidebar.active{
   left: -300px;
@@ -73,24 +81,170 @@ ul li a{
 
 /* List group */
 .list {
+  padding: 20px;
+}
 
+.list table{
+  border-radius: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+
+.list thead, th {
+		background-color: #4b578f;
+}
+
+.list form{
+  text-align: right;
+}
+
+
+
+.list th {
+  
+	text-align: left;
+}
+
+.list th, td {
+  
+	padding: 15px;
+	color: #fff;
+}
+
+.list td{
+  border: 1px solid  #4b578f;
+	background-color: rgba(255,255,255,0.2);
+}
+
+
+
+/* CSS */
+.list button, .container button {
+  background: linear-gradient(to bottom right,  rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.2) );
+  border: 0;
   margin-left: 20px;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
-.list.litable{
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
+.list button:not([disabled]):active, .container button:not([disabled]):active {
+  background: linear-gradient(to bottom right,  rgba(165, 165, 165, 0.3),rgba(92, 92, 92, 0.2) );
 }
 
-.list thead th{
-
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
+.list button:not([disabled]):hover, .container button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
+
+.list button::after, .container button::after {
+  box-shadow: none;
+}
+
+.list select, .container select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+      no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;}
+  /* <option> colors */
+.list option, .container option {
+    color: inherit;
+    background-color: #35125c;
+  }
+  /* Remove focus outline */
+  .list option:focus, .container option:focus {
+    outline: none;
+  }
+  /* Remove IE arrow */
+  .list option::-ms-expand, .container option::-ms-expand {
+    display: none;
+  }
+
+
+
+
+
+
+
 /* List group */
+
+/* Modal */
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #47316ebb;
+}
+
+.container{
+  
+  border-radius: 20px;
+  
+  background-color: #47316e;
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.container input{
+  
+  font: inherit;
+  border-radius: 5px;
+  background: rgb(249, 250, 250);
+  border: 1px solid rgb(181, 189, 196);
+  font-size: 16px;
+  height: 40px;
+  line-height: 24px;
+  padding: 7px 8px;
+  color: rgb(8, 9, 10);
+  box-shadow: none;
+  
+  
+}
+
+.container input:focus{
+  
+  background-color: #fff;
+  border-color: #3b49df;
+  box-shadow: 1px 1px 0 #3b49df;
+}
+
+
+
+
+/* Modal  */
+
+
+

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
+import Modal from './Modal'
 import '../App.css'
 import {Table} from '@mui/material'
 
 export default function ListGroups() {
+  
+  const [openModal, setOpenModal]=useState(false)
   const [id, setId] = useState("p41");
   const [message, setMessage] = useState("");
   const [groups, setGroups] = useState([]);
@@ -52,6 +55,7 @@ export default function ListGroups() {
 
 
   return (
+    
     <div className="list" >
       <form onSubmit={handleSubmit}>
 
@@ -70,7 +74,8 @@ export default function ListGroups() {
           onChange={event => setId(event.target.value)}
           value={id}
         /> */}
-        <button type="submit">Submit form</button>
+        <button type="submit">Отримати розклад</button>
+        <button type="button" onClick={()=> setOpenModal(true)}>Змінити розклад</button>
         <h2>{message}</h2>
       </form>
       <table>
@@ -99,6 +104,8 @@ export default function ListGroups() {
     ))}
   </tbody>
 </table>
+
+<Modal open={openModal} onClose={()=> setOpenModal(false)}  />
     </div>
   );
 }
