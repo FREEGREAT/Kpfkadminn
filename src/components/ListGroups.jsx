@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import Modal from './Modal'
 import '../App.css'
-import {Table} from '@mui/material'
 
-export default function ListGroups() {
+export default function ListGroups({ onButtonClick }) {
   
-  const [openModal, setOpenModal]=useState(false)
   const [id, setId] = useState("p41");
   const [message, setMessage] = useState("");
   const [groups, setGroups] = useState([]);
@@ -37,6 +34,8 @@ export default function ListGroups() {
       })
       .catch(error => console.log(error.message));
   };
+
+
 
   const sortedDaysOfWeek = [
     "Monday",
@@ -75,7 +74,7 @@ export default function ListGroups() {
           value={id}
         /> */}
         <button type="submit">Отримати розклад</button>
-        <button type="button" onClick={()=> setOpenModal(true)}>Змінити розклад</button>
+        <button type="button" onClick={onButtonClick}>Змінити розклад</button>
         <h2>{message}</h2>
       </form>
       <table>
@@ -105,7 +104,6 @@ export default function ListGroups() {
   </tbody>
 </table>
 
-<Modal open={openModal} onClose={()=> setOpenModal(false)}  />
     </div>
   );
 }

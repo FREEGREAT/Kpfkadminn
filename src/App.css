@@ -175,7 +175,7 @@ ul li a{
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;}
   /* <option> colors */
-.list option, .container option {
+.list option{
     color: inherit;
     background-color: #35125c;
   }
@@ -202,24 +202,32 @@ ul li a{
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #47316ebb;
+  background: linear-gradient(to bottom right,  rgba(46, 23, 51, 0.842),rgba(27, 52, 54, 0.829) );
+  
 }
 
 .container{
-  
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  text-align: center;
   border-radius: 20px;
-  
-  background-color: #47316e;
+  background: linear-gradient(to bottom right,  rgba(67, 120, 156, 0.897),rgba(88, 65, 151, 0.925) );
   position: absolute;
   padding: 20px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 0.5s ease;
 
 }
 
 .container input{
-  
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
   font: inherit;
   border-radius: 5px;
   background: rgb(249, 250, 250);
@@ -241,10 +249,51 @@ ul li a{
   box-shadow: 1px 1px 0 #3b49df;
 }
 
+.container select, label{
+  margin: 10px;
+}
+
+.container #close-btn:not([disabled]):active {
+  background: linear-gradient(to bottom right,  rgba(179, 22, 22, 0.3),rgba(255, 0, 0, 0.2) );
+}
+
+ .container #close-btn:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 71, 0.5), .125rem .125rem 1rem rgba(255, 90, 90, 0.5);
+}
+
+.container .update-btn:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(71, 239, 85, 0.5), .125rem .125rem 1rem rgba(90, 255, 118, 0.5);
+}
 
 
+.container .update-btn:not([disabled]):active {
+  background: linear-gradient(to bottom right,  rgba(22, 179, 22, 0.3),rgba(9, 255, 0, 0.2) );
+}
+
+.container option {
+  background-color: rgba(67, 120, 156, 0.897);
+}
 
 /* Modal  */
 
+/* React Transition */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
 
+/* React Transition */
 
