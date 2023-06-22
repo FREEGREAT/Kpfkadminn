@@ -85,7 +85,7 @@ export default function ({ open, onClose })  {
           <button className="update-btn" type='submit' >Оновити поле</button>
           <br />
           <button type="button" id="close-btn" onClick={onClose}>
-            Скасувати
+            Закрити
           </button>
         </form>
       </div>

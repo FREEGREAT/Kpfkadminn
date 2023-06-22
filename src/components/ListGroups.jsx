@@ -87,7 +87,7 @@ export default function ListGroups({ onButtonClick }) {
         /> */}
         <button type="submit">Отримати розклад</button>
         <button type="button" onClick={onButtonClick}>Змінити розклад</button>
-        <button className="logout-btn" onClick={handleLogout}> <TbLogout/> Logout</button>
+        <button className="logout-btn" onClick={handleLogout}><TbLogout className="logout-icon" /></button>
         <h2>{message}</h2>
       </form>
       <table>

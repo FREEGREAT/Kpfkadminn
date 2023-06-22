@@ -19,9 +19,10 @@ export const Login = () => {
           
         auth.login(user,password)  
         navigate(redirectPath, {replace: true})
+        
+      console.log((user, password))
       }
       
-      console.log((user, password))
     }
 
 

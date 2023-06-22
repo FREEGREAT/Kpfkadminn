@@ -191,10 +191,21 @@ header nav .NavLink.active {
     display: none;
   }
 
-  .logout-btn{
-    font-size: 10px;
+  .list .logout-icon{
+    font-size: 30px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+ .list .logout-btn{
+  position: relative;
+  padding: 6px;
+  margin-right: 20px;
+  top: 8px;
+
+ }
 
 
 
