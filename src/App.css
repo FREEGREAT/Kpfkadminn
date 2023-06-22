@@ -8,12 +8,14 @@ select {
 }
 
 
-
-
 body{
   margin: 0px;
 	height: 100%;
 }
+
+
+/*  header */
+
 header{
   margin: 0px;
   padding: 20px;
@@ -26,21 +28,18 @@ header svg{
   font-size: 30px;
 }
 
+header nav{
 
-/*  sidebar */
-.sidebar{
-  width: 270px;
-  background:#553492 ;
-  position: absolute;
-  height: 90.5%;
-  position: -webkit-sticky;
-  left: 0px;
-  backdrop-filter: blur(1000px);
-  transition: all 1s;
-  
-  opacity: 0.9;
-
+  display: flex;
+  gap: 20px;
 }
+
+header nav .NavLink{
+  display: flex;
+  gap: 20px;
+}
+
+
 
 
 .sidebar.active{
@@ -70,14 +69,14 @@ a {
 ul li a{
   transition: all 500ms;
 }
- ul li a:hover,
- ul li a.active {
+header nav .NavLink:hover,
+header nav .NavLink.active {
   background: #47316e;
-  padding: 5px;
+  margin-top: 20px;
   transition: all 500ms;
 }
 
-/*  sidebar */
+/*  header */
 
 /* List group */
 .list {
