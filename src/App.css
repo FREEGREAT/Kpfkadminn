@@ -83,6 +83,8 @@ header nav .NavLink.active {
   padding: 20px;
 }
 
+
+
 .list table{
   border-radius: 20px;
 	width: 100%;
@@ -117,6 +119,8 @@ header nav .NavLink.active {
   border: 1px solid  #4b578f;
 	background-color: rgba(255,255,255,0.2);
 }
+
+
 
 
 
@@ -185,6 +189,10 @@ header nav .NavLink.active {
   /* Remove IE arrow */
   .list option::-ms-expand, .container option::-ms-expand {
     display: none;
+  }
+
+  .logout-btn{
+    font-size: 10px;
   }
 
 

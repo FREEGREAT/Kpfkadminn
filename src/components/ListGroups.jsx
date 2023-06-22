@@ -1,9 +1,20 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
+import {TbLogout} from 'react-icons/tb';
 import { db } from "../config/firebase";
 import '../App.css'
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth";
 
 export default function ListGroups({ onButtonClick }) {
+
+  const auth = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+      auth.logout()
+      navigate('/')
+  }
   
   const [id, setId] = useState("p41");
   const [message, setMessage] = useState("");
@@ -21,6 +32,7 @@ export default function ListGroups({ onButtonClick }) {
       return;
     }
 
+ 
     const groupsCollectionRef = collection(
       db,
       "/kpfk/lessons/subjects/",
@@ -75,6 +87,7 @@ export default function ListGroups({ onButtonClick }) {
         /> */}
         <button type="submit">Отримати розклад</button>
         <button type="button" onClick={onButtonClick}>Змінити розклад</button>
+        <button className="logout-btn" onClick={handleLogout}> <TbLogout/> Logout</button>
         <h2>{message}</h2>
       </form>
       <table>
