@@ -17,7 +17,7 @@ return(
         <ul>
             <li><a href="/home"> <FaHome/> Домашня сторінка</a></li>
             <li><a href="/Edit"> <FaListAlt/> Список груп </a></li>
-            <li><a href="/"onClick={handleClick}> <RiLogoutBoxFill/> Вихід</a></li>
+            <li><button onClick={handleClick}> <RiLogoutBoxFill/> Вихід</button></li>
         </ul>
     </div>
  

@@ -23,9 +23,10 @@ function App() {
         <button type="button" onClick={()=> setOpenModal(true)}>Змінити розклад</button>
          < Navbar show={showSidebar} />
             <Routes>
-              <Route path="/" element={ <Login/>} />
+              
               <Route path="/home" element={<ListGroups/>} />
               <Route path="/Edit" element={<EditSubjects/>} />
+              <Route path="/" element={ <Login/>} />
             </Routes> 
         
       </div>
