@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { TbLogout } from "react-icons/tb";
 import { db } from "../config/firebase";
 import "../App.css";
 import { useNavigate } from "react-router-dom";

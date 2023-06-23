@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/welcome.css'
+import '../components/css/welcome.css'
 import { useNavigate } from 'react-router-dom';
 import {motion} from "framer-motion";
 import { useTrail, animated } from 'react-spring';

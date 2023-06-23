@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState }  from "react";
 import "../App.css";
-import { useState } from "react";
 import { doc, updateDoc } from "@firebase/firestore";
 import { db } from "../config/firebase";
 import { motion } from "framer-motion";

@@ -1,6 +1,5 @@
-import React from 'react'
-import { useContext } from 'react'
-import { useState, createContext } from 'react'
+import React, { useContext, useState, createContext } from 'react'
+
 
 export const AuthContext = createContext(null)
 
