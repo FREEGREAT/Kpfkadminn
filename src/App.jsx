@@ -8,6 +8,7 @@ import { AuthProvider } from "./components/auth";
 import {Login} from "./components/Login";
 import { RequireAuth } from "./components/RequireAuth";
 import Header from "./components/Header";
+import WelcomePage from "./components/wellcome";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -18,21 +19,15 @@ function App() {
 
   return (
     <div className="App">
-      <CSSTransition
-        in={openModal}
-        timeout={300}
-        classNames="modal"
-        unmountOnExit
-      >
-        <Modal open={openModal} onClose={() => setOpenModal(false)} />
-      </CSSTransition>
-
+    
       
+    <Modal open={openModal} onClose={() => setOpenModal(false)} />
   < Header />
 
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={< WelcomePage/>}/>
           <Route
             path="/list"
             element={
@@ -43,8 +38,6 @@ function App() {
           />
         </Routes>
       </AuthProvider>
-      
-      
     </div>
   );
 }
